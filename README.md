@@ -1,4 +1,25 @@
-# denLabeler.py
+# denLabeler
+Tools for making image labels
+
+# classifierLabeler.py
+* Tool for creating labels for images from video. Takes in video file, saves out images. Edit the text at the start of the file to change where files are read from and saved to
+* Will rescale and crop images. Edit the text at the start of the file to change the location and output size
+
+### Controls
+* q: quit
+* numberKey: class to save image as
+* ': skip the current frame
+* f: set to fast mode, 1 frame every second (based on the fps reported from the video file)
+* s: set to slow mode, show more frames, set but the variable numJumpSlow (default is 2 frames)
+* -: rewind, will delete the image
+
+### Outputs
+* Images to the folder specified in pathToImages. Images are named based on: `<original video name>-<frame number>-class<class number><image format>`
+* imagePathsAndClass.txt: file listing the path to the image (as listed in pathToImages with the image file name) and the class. Is in the format so the  caffe tool convert_imageset will work with it.
+
+
+# semanticLabeler.py
+
 Semantic labeling tool built in python using openCV
 
 Is a simple tool to do semantic labeling of video datasets, currently only supports single images.
